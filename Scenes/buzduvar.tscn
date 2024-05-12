@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnnhsj8s4mj0o"]
+
+[ext_resource type="Texture2D" uid="uid://dsdm6w0h6osba" path="res://kuslar/buzduvar.png" id="1_227je"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_amrpu"]
+size = Vector2(32.0073, 96.0304)
+
+[node name="buzduvar" type="CharacterBody2D" groups=["Wall"]]
+rotation = 3.13314
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_227je")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.20705, -9.99965)
+shape = SubResource("RectangleShape2D_amrpu")

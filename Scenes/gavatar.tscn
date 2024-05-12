@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://d2iso8yevim17"]
+
+[ext_resource type="Texture2D" uid="uid://bd6v71tyr2sd7" path="res://dusmanlar/anatar.png" id="1_2ejqw"]
+[ext_resource type="Script" path="res://Scripts/gavatar.gd" id="1_w6kk3"]
+[ext_resource type="Texture2D" uid="uid://cqe2r31fnisf8" path="res://dusmanlar/anatarOzi.png" id="2_c0irt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anju0"]
+atlas = ExtResource("1_2ejqw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqadq"]
+atlas = ExtResource("1_2ejqw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iuwy3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_anju0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqadq")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_c0irt")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5kxg"]
+size = Vector2(22, 32)
+
+[node name="Gavatar" type="CharacterBody2D" groups=["Gavatar"]]
+scale = Vector2(2, 2)
+script = ExtResource("1_w6kk3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_iuwy3")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_n5kxg")

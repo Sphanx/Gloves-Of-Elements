@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://c4q71tnp1b452"]
+
+[ext_resource type="Script" path="res://Scripts/Player/Projectile.gd" id="1_vi3b4"]
+[ext_resource type="Texture2D" uid="uid://dnjwlygykjaji" path="res://Assets/Red Effect Bullet Impact Explosion 32x32.png" id="2_yauv7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31f73"]
+atlas = ExtResource("2_yauv7")
+region = Rect2(512, 416, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fa7s7"]
+atlas = ExtResource("2_yauv7")
+region = Rect2(544, 416, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjkdy"]
+atlas = ExtResource("2_yauv7")
+region = Rect2(576, 416, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02upa"]
+atlas = ExtResource("2_yauv7")
+region = Rect2(352, 320, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tht7x"]
+atlas = ExtResource("2_yauv7")
+region = Rect2(384, 320, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tiqvk"]
+atlas = ExtResource("2_yauv7")
+region = Rect2(416, 320, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26aml"]
+atlas = ExtResource("2_yauv7")
+region = Rect2(448, 320, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_la8di"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31f73")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fa7s7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjkdy")
+}],
+"loop": false,
+"name": &"Destroy",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02upa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tht7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tiqvk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26aml")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_58t6j"]
+radius = 13.1529
+
+[node name="Projectile" type="Area2D"]
+z_index = 1
+script = ExtResource("1_vi3b4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_la8di")
+animation = &"Destroy"
+autoplay = "default"
+frame = 2
+frame_progress = 0.278903
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_58t6j")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

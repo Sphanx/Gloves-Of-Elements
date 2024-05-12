@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://c3df5djmhkha8"]
+
+[ext_resource type="Texture2D" uid="uid://b5ebikwwx67et" path="res://Assets/Blue Effect Bullet Impact Explosion 32x32.png" id="1_a2iqy"]
+[ext_resource type="Script" path="res://Scripts/Player/projectile_2.gd" id="1_pgs7m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhck4"]
+atlas = ExtResource("1_a2iqy")
+region = Rect2(512, 416, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cale"]
+atlas = ExtResource("1_a2iqy")
+region = Rect2(544, 416, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hw12i"]
+atlas = ExtResource("1_a2iqy")
+region = Rect2(576, 416, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5127"]
+atlas = ExtResource("1_a2iqy")
+region = Rect2(352, 320, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lplo5"]
+atlas = ExtResource("1_a2iqy")
+region = Rect2(384, 320, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fhtg"]
+atlas = ExtResource("1_a2iqy")
+region = Rect2(416, 320, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jfqv"]
+atlas = ExtResource("1_a2iqy")
+region = Rect2(448, 320, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ou3qi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhck4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4cale")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hw12i")
+}],
+"loop": false,
+"name": &"Destroy",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5127")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lplo5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fhtg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jfqv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a3kd3"]
+radius = 13.1529
+
+[node name="Projectile2" type="Area2D"]
+z_index = 1
+script = ExtResource("1_pgs7m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ou3qi")
+animation = &"Destroy"
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_a3kd3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

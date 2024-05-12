@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://51y86u2r5cu7"]
+
+[ext_resource type="VideoStream" path="res://Menu/bolum4.ogv" id="1_q825v"]
+[ext_resource type="Script" path="res://bolum4e gec cinematic.gd" id="2_b43kc"]
+
+[node name="Node" type="Node"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("1_q825v")
+autoplay = true
+script = ExtResource("2_b43kc")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(935, 544)
+zoom = Vector2(1.035, 1.035)
+
+[connection signal="finished" from="VideoStreamPlayer" to="VideoStreamPlayer" method="_on_finished"]

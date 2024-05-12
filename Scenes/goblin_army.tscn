@@ -1,0 +1,142 @@
+[gd_scene load_steps=9 format=3 uid="uid://cyo12fcg28th2"]
+
+[ext_resource type="Texture2D" uid="uid://dh2f43mwig6pf" path="res://png/goblinordusu.png" id="1_u6f1e"]
+[ext_resource type="Script" path="res://Scripts/goblin_army.gd" id="1_vof7g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snktv"]
+atlas = ExtResource("1_u6f1e")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7gn2"]
+atlas = ExtResource("1_u6f1e")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bq4x"]
+atlas = ExtResource("1_u6f1e")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ph0w3"]
+atlas = ExtResource("1_u6f1e")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wktej"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snktv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7gn2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bq4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ph0w3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24ps7"]
+size = Vector2(99, 326.5)
+
+[node name="GoblinArmy" type="Area2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_vof7g")
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.45228e-08, -271.75)
+rotation = 0.000742738
+scale = Vector2(0.999999, 0.999999)
+sprite_frames = SubResource("SpriteFrames_wktej")
+autoplay = "default"
+frame = 2
+frame_progress = 0.903277
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.28784e-08, -243.25)
+rotation = 0.000742738
+scale = Vector2(0.999999, 0.999999)
+sprite_frames = SubResource("SpriteFrames_wktej")
+autoplay = "default"
+frame = 2
+frame_progress = 0.903277
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="."]
+position = Vector2(8.67294e-09, -213.5)
+rotation = 0.000742738
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_wktej")
+autoplay = "default"
+frame = 2
+frame_progress = 0.903277
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="."]
+position = Vector2(-6.22822e-09, -181)
+rotation = 0.000742738
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_wktej")
+autoplay = "default"
+frame = 2
+frame_progress = 0.903277
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.5134e-09, -152)
+rotation = 0.000742738
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_wktej")
+autoplay = "default"
+frame = 2
+frame_progress = 0.903277
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="."]
+position = Vector2(3.95812e-09, -119)
+rotation = 0.000742738
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_wktej")
+autoplay = "default"
+frame = 2
+frame_progress = 0.903277
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.74623e-10, -92)
+rotation = 0.000742738
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_wktej")
+autoplay = "default"
+frame = 2
+frame_progress = 0.903277
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3.55067e-09, -61)
+rotation = 0.000742738
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_wktej")
+autoplay = "default"
+frame = 2
+frame_progress = 0.903277
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -32)
+rotation = 0.000742738
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_wktej")
+autoplay = "default"
+frame = 2
+frame_progress = 0.903277
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 0.000742738
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_wktej")
+autoplay = "default"
+frame = 2
+frame_progress = 0.903277
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5.5, -115.25)
+shape = SubResource("RectangleShape2D_24ps7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

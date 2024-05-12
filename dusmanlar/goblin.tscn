@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://dda60yt6x5g3a"]
+
+[ext_resource type="Texture2D" uid="uid://djn0w11sqd1yg" path="res://dusmanlar/Goblin.png" id="1_gi76y"]
+[ext_resource type="Script" path="res://dusmanlar/goblin.gd" id="1_yoegt"]
+[ext_resource type="Texture2D" uid="uid://ibiuakseblft" path="res://dusmanlar/kul.png" id="2_xuw2y"]
+[ext_resource type="PackedScene" uid="uid://ccenntf8dvfsf" path="res://killzone.tscn" id="4_ivnfq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eb0s6"]
+atlas = ExtResource("1_gi76y")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bi4fw"]
+atlas = ExtResource("1_gi76y")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w74qp"]
+atlas = ExtResource("1_gi76y")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8ems"]
+atlas = ExtResource("1_gi76y")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tmaik"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xuw2y")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eb0s6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bi4fw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w74qp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8ems")
+}],
+"loop": true,
+"name": &"yurume",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukp8y"]
+size = Vector2(24, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvolu"]
+size = Vector2(30, 48.5)
+
+[node name="goblin" type="CharacterBody2D" groups=["Goblin", "dusmanlar"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_yoegt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2, -1)
+scale = Vector2(1.53125, 1.53125)
+sprite_frames = SubResource("SpriteFrames_tmaik")
+animation = &"yurume"
+autoplay = "yurume"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -0.5)
+shape = SubResource("RectangleShape2D_ukp8y")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="Killzone" parent="." instance=ExtResource("4_ivnfq")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(1, -1.25)
+shape = SubResource("RectangleShape2D_qvolu")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Killzone" to="Killzone" method="_on_body_entered"]

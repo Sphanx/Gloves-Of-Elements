@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd4dkluetynh5"]
+
+[ext_resource type="AudioStream" uid="uid://cwc4c5w28xjhj" path="res://dungeon_music_3.mp3" id="1_l0nko"]
+
+[node name="Background music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_l0nko")
+autoplay = true
+bus = &"Music"

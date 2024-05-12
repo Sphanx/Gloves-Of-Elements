@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4lliy1jyitt7"]
+
+[ext_resource type="VideoStream" path="res://Menu/baslangc.ogv" id="1_0xta8"]
+[ext_resource type="Script" path="res://Menu/BirinciBolumeGecis.gd" id="2_fddwi"]
+
+[node name="Node" type="Node"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = 7.0
+offset_right = 28.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_0xta8")
+autoplay = true
+script = ExtResource("2_fddwi")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(963, 555)
+
+[connection signal="finished" from="VideoStreamPlayer" to="VideoStreamPlayer" method="_on_finished"]

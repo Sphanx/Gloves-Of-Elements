@@ -1,0 +1,311 @@
+[gd_scene load_steps=58 format=3 uid="uid://cvy4bc4havp6q"]
+
+[ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_frbyr"]
+[ext_resource type="Texture2D" uid="uid://jcw7gxuyeeui" path="res://Scenes/Player/Ana Karakter/Ateş/Attack/AteşForm13.png" id="3_5wqyi"]
+[ext_resource type="Script" path="res://Scripts/Player/Hand.gd" id="3_m6mf4"]
+[ext_resource type="Texture2D" uid="uid://e1nry3i6yxdt" path="res://Scenes/Player/Ana Karakter/Ateş/Idle/AteşForm1.png" id="3_v80j7"]
+[ext_resource type="Texture2D" uid="uid://dbmjvf85kdxpd" path="res://Scenes/Player/Ana Karakter/Ateş/Idle/AteşForm2.png" id="4_byb21"]
+[ext_resource type="Texture2D" uid="uid://182ah258o8gk" path="res://Scenes/Player/Ana Karakter/Ateş/Attack/AteşForm14.png" id="4_wyjst"]
+[ext_resource type="Texture2D" uid="uid://qby510rccgkm" path="res://Scenes/Player/Ana Karakter/Ateş/Idle/AteşForm3.png" id="5_fif7k"]
+[ext_resource type="Texture2D" uid="uid://swr5sbsyr6c0" path="res://Scenes/Player/Ana Karakter/Ateş/Attack/AteşForm15.png" id="5_hqdyy"]
+[ext_resource type="Texture2D" uid="uid://b54orb21brq4" path="res://Scenes/Player/Ana Karakter/Ateş/Idle/AteşForm4.png" id="6_gxuxe"]
+[ext_resource type="Texture2D" uid="uid://drqc3opmawrcn" path="res://Scenes/Player/Ana Karakter/Ateş/Attack/AteşForm16.png" id="6_rdlyw"]
+[ext_resource type="Texture2D" uid="uid://crqnwykd8pjqh" path="res://Scenes/Player/Ana Karakter/Ateş/Run/AteşForm5.png" id="7_4e0qh"]
+[ext_resource type="Texture2D" uid="uid://b4t2ows2t04bt" path="res://Scenes/Player/Ana Karakter/Ateş/Attack/AteşForm17.png" id="7_bluty"]
+[ext_resource type="Texture2D" uid="uid://btvr5irgtk0qu" path="res://Scenes/Player/Ana Karakter/Ateş/Run/AteşForm6.png" id="8_6p812"]
+[ext_resource type="Texture2D" uid="uid://crmbu10bkv2ns" path="res://Scenes/Player/Ana Karakter/Ateş/Jump/Jump Down/AteşForm26.png" id="8_twr81"]
+[ext_resource type="Texture2D" uid="uid://c4uwtum53s6tg" path="res://Scenes/Player/Ana Karakter/Ateş/Run/AteşForm7.png" id="9_f8go3"]
+[ext_resource type="Texture2D" uid="uid://dubrdq8ifocp4" path="res://Scenes/Player/Ana Karakter/Ateş/Jump/Jump Down/AteşForm27.png" id="9_qpo1v"]
+[ext_resource type="Texture2D" uid="uid://buxiu7sjp2u0l" path="res://Scenes/Player/Ana Karakter/Ateş/Jump/Jump Down/AteşForm28.png" id="10_7quco"]
+[ext_resource type="Texture2D" uid="uid://cegnjmqum4jrl" path="res://Scenes/Player/Ana Karakter/Ateş/Run/AteşForm8.png" id="10_p54ya"]
+[ext_resource type="Texture2D" uid="uid://ceo44khs7v4y3" path="res://Scenes/Player/Ana Karakter/Ateş/Jump/Jump Down/AteşForm29.png" id="11_7uwog"]
+[ext_resource type="Texture2D" uid="uid://y5ycpsol6pt8" path="res://Scenes/Player/Ana Karakter/Ateş/Run/AteşForm9.png" id="11_lrmht"]
+[ext_resource type="Texture2D" uid="uid://dauc4g7m7gcln" path="res://Scenes/Player/Ana Karakter/Ateş/Run/AteşForm10.png" id="12_gjh40"]
+[ext_resource type="Texture2D" uid="uid://dvcn6osvnw64r" path="res://Scenes/Player/Ana Karakter/Ateş/Run/AteşForm11.png" id="13_1yu60"]
+[ext_resource type="Texture2D" uid="uid://bem2fbblloca0" path="res://Scenes/Player/Ana Karakter/Ateş/Run/AteşForm12.png" id="14_l1trb"]
+[ext_resource type="Texture2D" uid="uid://b18b101vqqrro" path="res://Scenes/Player/Ana Karakter/Ateş/Jump/Jump Up/AteşForm18.png" id="16_qv5f0"]
+[ext_resource type="Texture2D" uid="uid://mols77gru5xd" path="res://Scenes/Player/Ana Karakter/Ateş/Jump/Jump Up/AteşForm19.png" id="17_kqgh1"]
+[ext_resource type="Texture2D" uid="uid://bxn5xqt53cfww" path="res://Scenes/Player/Ana Karakter/Ateş/Jump/Jump Up/AteşForm20.png" id="18_th7ec"]
+[ext_resource type="Texture2D" uid="uid://bj1h0fthovksm" path="res://Scenes/Player/Ana Karakter/Ateş/Jump/Jump Up/AteşForm21.png" id="19_fgehv"]
+[ext_resource type="Texture2D" uid="uid://bs226frw7qyk8" path="res://Scenes/Player/Ana Karakter/Buz/Attack/BuzForm13.png" id="28_pww5d"]
+[ext_resource type="Texture2D" uid="uid://ctdhfecm65vu3" path="res://Scenes/Player/Ana Karakter/Buz/Attack/BuzForm14.png" id="29_hxg53"]
+[ext_resource type="Texture2D" uid="uid://dyaclr1802myt" path="res://Scenes/Player/Ana Karakter/Buz/Attack/BuzForm15.png" id="30_2pxwk"]
+[ext_resource type="Texture2D" uid="uid://mxdtur1kp28x" path="res://Scenes/Player/Ana Karakter/Buz/Attack/BuzForm16.png" id="31_uo103"]
+[ext_resource type="Texture2D" uid="uid://wj2jwwstxppt" path="res://Scenes/Player/Ana Karakter/Buz/Attack/BuzForm17.png" id="32_cilf4"]
+[ext_resource type="Texture2D" uid="uid://1hxo4ji7v3lc" path="res://Scenes/Player/Ana Karakter/Buz/Jump/Jump Down/BuzForm26.png" id="33_8a635"]
+[ext_resource type="Texture2D" uid="uid://btapk63x2lrvp" path="res://Scenes/Player/Ana Karakter/Buz/Jump/Jump Down/BuzForm27.png" id="34_7thcn"]
+[ext_resource type="Texture2D" uid="uid://d13rt8wqjekwa" path="res://Scenes/Player/Ana Karakter/Buz/Jump/Jump Down/BuzForm28.png" id="35_see2v"]
+[ext_resource type="Texture2D" uid="uid://bp0v2gc8ia2dj" path="res://Scenes/Player/Ana Karakter/Buz/Jump/Jump Down/BuzForm29.png" id="36_fs8ht"]
+[ext_resource type="Texture2D" uid="uid://bwmnff5orxng0" path="res://Scenes/Player/Ana Karakter/Buz/Idle/BuzForm1.png" id="37_sons6"]
+[ext_resource type="Texture2D" uid="uid://ksiim7yy7obd" path="res://Scenes/Player/Ana Karakter/Buz/Idle/BuzForm2.png" id="38_raeyn"]
+[ext_resource type="Texture2D" uid="uid://b3egicoli3ahs" path="res://Scenes/Player/Ana Karakter/Buz/Idle/BuzForm3.png" id="39_wil6x"]
+[ext_resource type="Texture2D" uid="uid://dasfboay3sewj" path="res://Scenes/Player/Ana Karakter/Buz/Idle/BuzForm4.png" id="40_owaj0"]
+[ext_resource type="Texture2D" uid="uid://dv4bymgen5ac8" path="res://Scenes/Player/Ana Karakter/Buz/Jump/Jump Up/BuzForm18.png" id="41_2e5qt"]
+[ext_resource type="Texture2D" uid="uid://de433o2cyhmm2" path="res://Scenes/Player/Ana Karakter/Buz/Jump/Jump Up/BuzForm19.png" id="42_0c0el"]
+[ext_resource type="Texture2D" uid="uid://djqe6t76fl558" path="res://Scenes/Player/Ana Karakter/Buz/Jump/Jump Up/BuzForm20.png" id="43_pl5bp"]
+[ext_resource type="Texture2D" uid="uid://dth5ij53mduew" path="res://Scenes/Player/Ana Karakter/Buz/Jump/Jump Up/BuzForm21.png" id="44_rdtyc"]
+[ext_resource type="Texture2D" uid="uid://21t0doqthivo" path="res://Scenes/Player/Ana Karakter/Buz/Run/BuzForm5.png" id="45_np45f"]
+[ext_resource type="Texture2D" uid="uid://brv0xtm8kuj5h" path="res://Scenes/Player/Ana Karakter/Buz/Run/BuzForm6.png" id="46_amwno"]
+[ext_resource type="Texture2D" uid="uid://cp805oesmq8cg" path="res://Scenes/Player/Ana Karakter/Buz/Run/BuzForm7.png" id="47_0gi56"]
+[ext_resource type="Texture2D" uid="uid://dh7uan5l26d86" path="res://Scenes/Player/Ana Karakter/Buz/Run/BuzForm8.png" id="48_c5ik4"]
+[ext_resource type="Texture2D" uid="uid://b4jry22ny3br0" path="res://Scenes/Player/Ana Karakter/Buz/Run/BuzForm9.png" id="49_071r0"]
+[ext_resource type="Texture2D" uid="uid://d3t43nceqpc15" path="res://Scenes/Player/Ana Karakter/Buz/Run/BuzForm10.png" id="50_kvley"]
+[ext_resource type="Texture2D" uid="uid://6gvem6gyqjc0" path="res://Scenes/Player/Ana Karakter/Buz/Run/BuzForm11.png" id="51_cc51o"]
+[ext_resource type="Texture2D" uid="uid://cl6p02kamy11o" path="res://Scenes/Player/Ana Karakter/Buz/Run/BuzForm12.png" id="52_o257p"]
+[ext_resource type="AudioStream" uid="uid://33tian0kncxe" path="res://SFX_Footstep_Stone_3.wav" id="53_aeetp"]
+[ext_resource type="AudioStream" uid="uid://dmefx0cmg7moa" path="res://SFX_Attack_Voice_Male_Swoosh_Swing.wav" id="54_245u6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4vq1p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5wqyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wyjst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hqdyy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rdlyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bluty")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_twr81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qpo1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7quco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7uwog")
+}],
+"loop": true,
+"name": &"Fall",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_v80j7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_byb21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fif7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gxuxe")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_qv5f0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_kqgh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_th7ec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_fgehv")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_4e0qh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6p812")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_f8go3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_p54ya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_lrmht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_gjh40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_1yu60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_l1trb")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wnr7k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_pww5d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_hxg53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_2pxwk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_uo103")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_cilf4")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_8a635")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_7thcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_see2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_fs8ht")
+}],
+"loop": true,
+"name": &"Fall",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_sons6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_raeyn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_wil6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_owaj0")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_2e5qt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_0c0el")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_pl5bp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_rdtyc")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_np45f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_amwno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_0gi56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_c5ik4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_071r0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_kvley")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_cc51o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_o257p")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vlcxh"]
+radius = 11.0
+height = 52.0
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+z_index = 1
+script = ExtResource("1_frbyr")
+SPEED = 200
+JUMP_FORCE = 350
+
+[node name="Hand" type="Node2D" parent="."]
+script = ExtResource("3_m6mf4")
+
+[node name="IceGlove" type="Node" parent="Hand"]
+
+[node name="Timer" type="Timer" parent="Hand"]
+wait_time = 0.5
+
+[node name="ShotPos" type="Marker2D" parent="Hand" groups=["Player"]]
+
+[node name="Flip" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Flip"]
+sprite_frames = SubResource("SpriteFrames_4vq1p")
+animation = &"Run"
+autoplay = "Idle"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Flip"]
+sprite_frames = SubResource("SpriteFrames_wnr7k")
+animation = &"Attack"
+autoplay = "Idle"
+frame = 4
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_vlcxh")
+
+[node name="Footstep" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("53_aeetp")
+bus = &"SFX"
+
+[node name="Spell" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("54_245u6")
+pitch_scale = 0.79
+bus = &"SFX"
+
+[connection signal="timeout" from="Hand/Timer" to="Hand" method="_on_timer_timeout"]

@@ -1,0 +1,190 @@
+[gd_scene load_steps=21 format=3 uid="uid://bgabl33ac7n0c"]
+
+[ext_resource type="Texture2D" uid="uid://cfjwybj0ajrbb" path="res://Menu/Uı/Ayarlar Menüsü/Arka Plan.png" id="1_2j1qr"]
+[ext_resource type="Script" path="res://Menu/AyarlarButton.gd" id="2_e8vd3"]
+[ext_resource type="Texture2D" uid="uid://b2880gbwjdwou" path="res://Menu/Uı/Ayarlar Menüsü/Butonlar/Çarpı/Tik Butonu1.png" id="2_tsea4"]
+[ext_resource type="Texture2D" uid="uid://c1uu046ln2sji" path="res://Menu/Uı/Ayarlar Menüsü/Butonlar/Çarpı/Tik Butonu2.png" id="3_at604"]
+[ext_resource type="Texture2D" uid="uid://bw7auunmfj4x" path="res://Menu/Uı/Ayarlar Menüsü/Butonlar/Çarpı/Tik Butonu3.png" id="4_tu1r8"]
+[ext_resource type="Texture2D" uid="uid://bvs18mpjsf0x3" path="res://Menu/Uı/Ayarlar Menüsü/Butonlar/Çarpı/Çarpı Butonu1.png" id="5_qix5m"]
+[ext_resource type="Texture2D" uid="uid://dvk2n1wd11vfj" path="res://Menu/Uı/Ayarlar Menüsü/Butonlar/Çarpı/Çarpı Butonu2.png" id="6_mmbhs"]
+[ext_resource type="Script" path="res://Menu/AyarlarButton2.gd" id="6_xsv35"]
+[ext_resource type="Texture2D" uid="uid://bj3bnkw18qc6g" path="res://Menu/Uı/Ayarlar Menüsü/Butonlar/Çarpı/Çarpı Butonu3.png" id="7_c3scd"]
+[ext_resource type="Script" path="res://Menu/AyarlarButton3.gd" id="10_wyqua"]
+[ext_resource type="Script" path="res://Menu/AyarlarButton4.gd" id="11_1yc80"]
+[ext_resource type="Script" path="res://Menu/AyarlarButton5.gd" id="12_gejhp"]
+[ext_resource type="Texture2D" uid="uid://bb1i0oab1s8xq" path="res://Menu/Uı/ana menüye dönme/ana menu button1.png" id="13_lqlud"]
+[ext_resource type="Texture2D" uid="uid://bwd0lcss7usay" path="res://Menu/Uı/ana menüye dönme/ana menu button2.png" id="14_dssdo"]
+[ext_resource type="Texture2D" uid="uid://couebghg4rtm0" path="res://Menu/Uı/ana menüye dönme/ana menu button3.png" id="15_odnei"]
+
+[sub_resource type="Gradient" id="Gradient_l1tpq"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.673065, 0.813019, 0.48753, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_j820j"]
+gradient = SubResource("Gradient_l1tpq")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8xbgf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tsea4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_at604")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tu1r8")
+}],
+"loop": false,
+"name": &"tik",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vdo6f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_qix5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mmbhs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_c3scd")
+}],
+"loop": false,
+"name": &"çarpı",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vluwj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_lqlud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_dssdo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_odnei")
+}],
+"loop": false,
+"name": &"goback",
+"speed": 10.0
+}]
+
+[node name="Node" type="Node"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(575, 324.5)
+scale = Vector2(18.0625, 10.0781)
+texture = SubResource("GradientTexture2D_j820j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(383, 106)
+scale = Vector2(2.43949, 2.43949)
+texture = ExtResource("1_2j1qr")
+centered = false
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = -1
+anchor_right = 0.031
+anchor_bottom = 0.04
+offset_left = 641.0
+offset_top = 300.0
+offset_right = 599.48
+offset_bottom = 278.8
+script = ExtResource("2_e8vd3")
+
+[node name="tik" type="AnimatedSprite2D" parent="Button"]
+texture_filter = 1
+position = Vector2(9, 10)
+scale = Vector2(1.80435, 1.80435)
+sprite_frames = SubResource("SpriteFrames_8xbgf")
+animation = &"tik"
+
+[node name="Button2" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = 0.077
+anchor_right = 0.064
+anchor_bottom = 0.077
+offset_left = 589.12
+offset_top = 218.84
+offset_right = 613.12
+offset_bottom = 237.84
+script = ExtResource("6_xsv35")
+
+[node name="çarpı" type="AnimatedSprite2D" parent="Button2"]
+texture_filter = 1
+position = Vector2(12, 9)
+scale = Vector2(1.804, 1.804)
+sprite_frames = SubResource("SpriteFrames_vdo6f")
+animation = &"çarpı"
+
+[node name="Button3" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.033
+anchor_top = 0.036
+anchor_right = 0.033
+anchor_bottom = 0.036
+offset_left = 575.64
+offset_top = 315.12
+offset_right = 597.64
+offset_bottom = 333.12
+script = ExtResource("10_wyqua")
+
+[node name="tik2" type="AnimatedSprite2D" parent="Button3"]
+texture_filter = 1
+position = Vector2(11, 10)
+scale = Vector2(1.80435, 1.80435)
+sprite_frames = SubResource("SpriteFrames_8xbgf")
+animation = &"tik"
+
+[node name="Button4" type="Button" parent="."]
+anchors_preset = -1
+anchor_right = 0.007
+anchor_bottom = 0.012
+offset_left = 715.0
+offset_top = 354.0
+offset_right = 719.56
+offset_bottom = 362.04
+script = ExtResource("11_1yc80")
+
+[node name="çarpı2" type="AnimatedSprite2D" parent="Button4"]
+texture_filter = 1
+position = Vector2(9, 11)
+scale = Vector2(1.804, 1.804)
+sprite_frames = SubResource("SpriteFrames_vdo6f")
+animation = &"çarpı"
+
+[node name="Button5" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.033
+anchor_right = 0.019
+anchor_bottom = 0.033
+offset_left = 500.112
+offset_top = 377.616
+offset_right = 667.112
+offset_bottom = 402.616
+script = ExtResource("12_gejhp")
+
+[node name="ana menu tusu" type="AnimatedSprite2D" parent="Button5"]
+texture_filter = 1
+position = Vector2(86, 11)
+scale = Vector2(1.71296, 1.71296)
+sprite_frames = SubResource("SpriteFrames_vluwj")
+animation = &"goback"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(579, 332)
+zoom = Vector2(1.755, 1.755)
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
+[connection signal="pressed" from="Button3" to="Button3" method="_on_pressed"]
+[connection signal="pressed" from="Button4" to="Button4" method="_on_pressed"]
+[connection signal="pressed" from="Button5" to="Button5" method="_on_pressed"]

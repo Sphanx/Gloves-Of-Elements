@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhrstcprpl3hg"]
+
+[ext_resource type="VideoStream" path="res://Menu/BİTİS.ogv" id="1_j4ogf"]
+
+[node name="Node" type="Node"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("1_j4ogf")
+autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(938, 532)
+zoom = Vector2(1.015, 1.015)

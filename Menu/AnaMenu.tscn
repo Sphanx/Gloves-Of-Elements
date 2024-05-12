@@ -1,0 +1,141 @@
+[gd_scene load_steps=16 format=3 uid="uid://l1h1hxd6qdc8"]
+
+[ext_resource type="Script" path="res://Button.gd" id="1_oe2v5"]
+[ext_resource type="Script" path="res://Button2.gd" id="2_12et6"]
+[ext_resource type="Script" path="res://Button3.gd" id="3_koopw"]
+[ext_resource type="Texture2D" uid="uid://bk63uqf6apk7j" path="res://Menu/Uı/Ana Menu/Oyun Adı/Oyun Adı.png" id="4_yryd1"]
+[ext_resource type="Texture2D" uid="uid://b2steaf1gk3d1" path="res://Menu/Uı/Ana Menu/New Game/NewGameButton1.png" id="5_a4vd7"]
+[ext_resource type="Texture2D" uid="uid://v8dyhvxmhwns" path="res://Menu/Uı/Ana Menu/New Game/NewGameButton2.png" id="6_lac51"]
+[ext_resource type="Texture2D" uid="uid://cd0p0ga0t1wa6" path="res://Menu/Uı/Ana Menu/Options/OptionsButton1.png" id="7_2ntwq"]
+[ext_resource type="Texture2D" uid="uid://63yjtuucqvo8" path="res://Menu/Uı/Ana Menu/Options/OptionsButton2.png" id="8_01bsj"]
+[ext_resource type="Texture2D" uid="uid://dfandnwathsgf" path="res://Menu/Uı/Ana Menu/Exıt/ExıtButton1.png" id="9_on32p"]
+[ext_resource type="Texture2D" uid="uid://dr3iprc8q0ey6" path="res://Menu/Uı/Ana Menu/Exıt/ExıtButton2.png" id="10_dhppc"]
+
+[sub_resource type="Gradient" id="Gradient_i65sr"]
+offsets = PackedFloat32Array(0.795181)
+colors = PackedColorArray(0.34359, 0.0800233, 0.0581348, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ycnw5"]
+gradient = SubResource("Gradient_i65sr")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s3t7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_01bsj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2ntwq")
+}],
+"loop": false,
+"name": &"Idle2",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bdssx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_dhppc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_on32p")
+}],
+"loop": false,
+"name": &"Idle3",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wkv61"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_lac51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_a4vd7")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[node name="Node" type="Node"]
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.224
+anchor_top = 0.311
+anchor_right = 0.224
+anchor_bottom = 0.311
+offset_left = 21.92
+offset_top = 28.12
+offset_right = 236.92
+offset_bottom = 67.12
+script = ExtResource("1_oe2v5")
+
+[node name="Button2" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.018
+anchor_top = 0.028
+anchor_right = 0.018
+anchor_bottom = 0.028
+offset_left = 420.44
+offset_top = 407.76
+offset_right = 633.44
+offset_bottom = 446.76
+script = ExtResource("2_12et6")
+
+[node name="Button3" type="Button" parent="."]
+anchors_preset = -1
+anchor_right = 0.007
+anchor_bottom = 0.012
+offset_left = 451.0
+offset_top = 512.0
+offset_right = 656.936
+offset_bottom = 545.224
+script = ExtResource("3_koopw")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(574, 322.5)
+scale = Vector2(18.0313, 10.1406)
+texture = SubResource("GradientTexture2D_ycnw5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(556, 187)
+scale = Vector2(1.40625, 1.44922)
+texture = ExtResource("4_yryd1")
+
+[node name="Sprite2D6" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(559, 460)
+scale = Vector2(2.24802, 2.31671)
+sprite_frames = SubResource("SpriteFrames_s3t7s")
+animation = &"Idle2"
+autoplay = "Idle2"
+
+[node name="Sprite2D7" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(559, 542)
+scale = Vector2(2.248, 2.317)
+sprite_frames = SubResource("SpriteFrames_bdssx")
+animation = &"Idle3"
+autoplay = "Idle3"
+
+[node name="Sprite2D3" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(558.668, 389.759)
+scale = Vector2(2.248, 2.317)
+sprite_frames = SubResource("SpriteFrames_wkv61")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(574, 321)
+zoom = Vector2(1.725, 1.725)
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
+[connection signal="pressed" from="Button3" to="Button3" method="_on_pressed"]
+[connection signal="animation_finished" from="Sprite2D3" to="Button" method="_on_sprite_2d_3_animation_finished"]

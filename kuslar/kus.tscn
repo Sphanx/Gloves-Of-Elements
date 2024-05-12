@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://dnp7k0cd1mff4"]
+
+[ext_resource type="Script" path="res://kuslar/kus.gd" id="1_3alls"]
+[ext_resource type="Texture2D" uid="uid://dp4k7if2ea68s" path="res://kuslar/bird.png" id="1_it5e8"]
+[ext_resource type="Texture2D" uid="uid://ibiuakseblft" path="res://dusmanlar/kul.png" id="2_j82bh"]
+[ext_resource type="PackedScene" uid="uid://ccenntf8dvfsf" path="res://killzone.tscn" id="3_uqwsl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aovci"]
+atlas = ExtResource("1_it5e8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xqmf"]
+atlas = ExtResource("1_it5e8")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubxuj"]
+atlas = ExtResource("1_it5e8")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0l0xy"]
+atlas = ExtResource("1_it5e8")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1a5bh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_j82bh")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aovci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xqmf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubxuj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0l0xy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boicn"]
+size = Vector2(29, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nf13g"]
+size = Vector2(31, 18)
+
+[node name="kus" type="CharacterBody2D" groups=["Bird"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_3alls")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0.999992, 0)
+scale = Vector2(1.1211, 1.02361)
+sprite_frames = SubResource("SpriteFrames_1a5bh")
+animation = &"Death"
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_boicn")
+
+[node name="Killzone" parent="." instance=ExtResource("3_uqwsl")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_nf13g")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+
+[connection signal="body_entered" from="Killzone" to="Killzone" method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
